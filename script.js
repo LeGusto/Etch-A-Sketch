@@ -2,6 +2,7 @@ let doc = document;
 let grid_container = doc.createElement('div');
 let holder = doc.createElement('div');
 let mid = doc.createElement('div');
+let header = doc.createElement('div');
 let mouse_down = false;
 let x_grid = 20;
 let y_grid = 20;
@@ -9,7 +10,9 @@ let mode = 'color'
 grid_container.classList.add('container');
 
 holder.classList.add('holder');
-mid.classList.add('mid')
+mid.classList.add('mid');
+header.classList.add('hed');
+header.textContent = 'Etch-A-Sketch';
 
 
 document.onmousedown = () => {mouse_down = true;}
@@ -60,7 +63,7 @@ function lighten (num)
 {
     num = parseInt(num);
     console.log(num);
-    num+=10;
+    num/10*9;
     if (num>255) {num = 255;}
     console.log(num);
     return num;
@@ -138,7 +141,7 @@ settings.appendChild(darken_m_b);
 settings.appendChild(lighten_m_b);
 
 
-resizers.appendChild(resizer1);
+resizers.appendChild(resizer1);;
 holder.appendChild(resizers);
 holder.appendChild(grid_container);
 holder.appendChild(settings);
@@ -147,4 +150,5 @@ mid.appendChild(grid_container);
 mid.appendChild(settings);
 holder.appendChild(mid);
 
+doc.body.append(header);
 doc.body.appendChild(holder);
