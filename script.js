@@ -63,7 +63,7 @@ function lighten (num)
 {
     num = parseInt(num);
     console.log(num);
-    num/10*9;
+    num+=10;
     if (num>255) {num = 255;}
     console.log(num);
     return num;
@@ -139,9 +139,10 @@ settings.appendChild(color_m_b);
 settings.appendChild(eraser_m_b);
 settings.appendChild(darken_m_b);
 settings.appendChild(lighten_m_b);
+settings.appendChild(resizer1);
 
 
-resizers.appendChild(resizer1);;
+/*resizers.appendChild(resizer1);;*/
 holder.appendChild(resizers);
 holder.appendChild(grid_container);
 holder.appendChild(settings);
